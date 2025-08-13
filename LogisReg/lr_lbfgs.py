@@ -50,7 +50,6 @@ def train(n_epochs, eval=False):
                 loss.backward()
                 return loss
             loss = optimizer.step(closure) 
-            optimizer.step(closure)
             train_losses[epoch] += loss.item()
 
             if eval:

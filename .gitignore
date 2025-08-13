@@ -211,3 +211,5 @@ __marimo__/
 
 # Data files
 */data/*
+fista_backtracking.py
+*/metrics/*
