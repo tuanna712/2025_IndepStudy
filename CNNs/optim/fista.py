@@ -5,9 +5,9 @@ def soft_thresholding(x, threshold):
     """
     Applies the soft-thresholding operator. When g(x) = lambda ||x||_1,
     the proximal operator is defined as:
-    prox_{lambda * t}(x) = sign(x) * max(0, |x| - lambda * t)
+        threshold = t * lambda
+        prox_{lambda * t}(x) = sign(x) * max(0, abs(x) - threshold)
     where lambda is the regularization parameter and t is the step size.
-    In this case, t = 1 (for simplicity).
     """
     return torch.sign(x) * torch.relu(torch.abs(x) - threshold)
 
