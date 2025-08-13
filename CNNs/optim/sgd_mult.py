@@ -1,7 +1,7 @@
 import torch
 from torch.optim.optimizer import Optimizer, required
 
-class MultiStepSGD(Optimizer):
+class ManyStepSGD(Optimizer):
     def __init__(self, params, 
                  lr=required, 
                  momentum=0, 
@@ -30,7 +30,7 @@ class MultiStepSGD(Optimizer):
                         )
 
         # Call the parent Optimizer's constructor
-        super(MultiStepSGD, self).__init__(params, defaults)
+        super(ManyStepSGD, self).__init__(params, defaults)
 
     @torch.no_grad() # Crucial: we don't want to compute gradients for the optimizer's internal operations
     def step(self, closure=None):
